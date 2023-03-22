@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="Adw" version="1.0" />
+  <template class="DharmaWindow" parent="AdwApplicationWindow">
+    <property name="default-width">300</property>
+    <property name="default-height">500</property>
+    <property name="width-request">300</property>
+    <property name="height-request">500</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar" id="header_bar">
+
+            <property name="title-widget">
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Dharma</property>
+                <property name="single-line-mode">True</property>
+                <property name="ellipsize">end</property>
+                <property name="width-chars">5</property>
+                <style>
+                  <class name="title" />
+                </style>
+              </object>
+            </property>
+
+            <child type="end">
+              <object class="GtkMenuButton">
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="menu-model">primary_menu</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwPreferencesPage">
+
+            <child>
+              <object class="AdwPreferencesGroup" id="accounts_list">
+                <property name="title" translatable="true">Accounts list</property>
+                <child type="header-suffix">
+                  <object class="GtkButton" id="add_account_btn">
+                    <style>
+                      <class name="flat" />
+                    </style>
+                    <child>
+                      <object class="AdwButtonContent">
+                        <property name="label" translatable="true">Add</property>
+                        <property name="icon-name">list-add-symbolic</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwPreferencesGroup" id="filepaths_settings">
+                <property name="title" translatable="true">File paths</property>
+                <child>
+                  <object class="AdwActionRow">
+                    <property name="title">Qemu qcow file</property>
+                    <child type="suffix">
+                      <object class="GtkButton" id="qcow_file_button">
+                        <property name="valign">center</property>
+                        <property name="halign">center</property>
+                        <child>
+                          <object class="AdwButtonContent">
+                            <property name="icon-name">document-open-symbolic</property>
+                            <property name="label" translatable="true">Open</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow">
+                    <property name="title" translatable="true">CS:GO files</property>
+                    <child type="suffix">
+                      <object class="GtkButton" id="game_files_button">
+                        <property name="valign">center</property>
+                        <property name="halign">center</property>
+                        <child>
+                          <object class="AdwButtonContent">
+                            <property name="icon-name">document-open-symbolic</property>
+                            <property name="label" translatable="true">Open</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwPreferencesGroup" id="machines_settings">
+                <property name="title" translatable="true">Machines settings</property>
+                <child>
+                  <object class="AdwActionRow">
+                    <property name="title" translatable="true">Process limit</property>
+                    <child type="suffix">
+                      <object class="GtkSpinButton">
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="numeric">true</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="upper">8</property>
+                            <property name="value">1</property>
+                            <property name="lower">1</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">10</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwPreferencesGroup" id="runGroup">
+                <child>
+                  <object class="GtkButton" id="run_button">
+                    <style>
+                      <class name="suggested-action" />
+                      <class name="pill" />
+                    </style>
+                    <property name="valign">center</property>
+                    <property name="halign">center</property>
+                    <property name="label" translatable="true">Run</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Dharma</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

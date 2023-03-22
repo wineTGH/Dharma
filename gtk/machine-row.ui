@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="DharmaMachineRow" parent="AdwActionRow">
+        <property name="title" translatable="true">Username</property>
+        <property name="subtitle" translatable="true">Running...</property>
+        <child type="suffix">
+            <object class="GtkButton" id="open_view_button">
+                <property name="valign">center</property>
+                <property name="halign">center</property>
+                <style>
+                    <class name="flat" />
+                </style>
+                <child>
+                    <object class="AdwButtonContent">
+                        <property name="icon-name">screen-shared-symbolic</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </template>
+</interface>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="DharmaAddAccountDialog" parent="AdwWindow">
+    <property name="default-width">300</property>
+    <property name="default-height">500</property>
+    <property name="width-request">300</property>
+    <property name="height-request">500</property>
+    <property name="modal">true</property>
+    <child>
+      <object class="GtkBox">
+        <property name="hexpand">true</property>
+        <property name="margin-bottom">24</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwHeaderBar">
+            <child type="title">
+              <object class="GtkLabel"></object>
+            </child>
+            <style>
+              <class name="flat"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkWindowHandle">
+            <child>
+              <object class="AdwClamp">
+                <property name="maximum-size">360</property>
+                <property name="tightening-threshold">280</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="hexpand">true</property>
+                    <property name="orientation">vertical</property>
+                    <property name="margin-start">16</property>
+                    <property name="margin-end">16</property>
+                    <property name="spacing">24</property>
+                    <child>
+                      <object class="AdwPreferencesGroup">
+                        <property name="title" translatable="true">Credentials</property>
+                        <child>
+                          <object class="AdwEntryRow" id="username_entry">
+                            <property name="title" translatable="true">Username</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwPasswordEntryRow" id="password_entry">
+                            <property name="title" translatable="true">Password</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="secrets_file_row">
+                            <property name="title" translatable="true">Account .maFile</property>
+                            <property name="subtitle" translatable="true">(None)</property>
+                            <child type="suffix">
+                              <object class="GtkButton" id="choose_secret_filedialog">
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
+                                <child>
+                                  <object class="AdwButtonContent">
+                                    <property name="icon-name">document-open-symbolic</property>
+                                    <property name="label" translatable="true">Open</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwPreferencesGroup">
+                        <property name="title" translatable="true">Machine settings</property>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="true">RAM usage</property>
+                            <child type="suffix">
+                              <object class="GtkSpinButton">
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
+                                <property name="numeric">true</property>
+                                <property name="adjustment">
+                                  <object class="GtkAdjustment">
+                                    <property name="upper">8</property>
+                                    <property name="value">1</property>
+                                    <property name="lower">1</property>
+                                    <property name="step-increment">1</property>
+                                    <property name="page-increment">10</property>
+                                  </object>
+                                </property>
+                              </object>
+                            </child>
+                            <child type="suffix">
+                              <object class="GtkLabel">
+                                <property name="label">GiB</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="true">vCPU allocation</property>
+                            <child type="suffix">
+                              <object class="GtkSpinButton">
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
+                                <property name="numeric">true</property>
+                                <property name="adjustment">
+                                  <object class="GtkAdjustment">
+                                    <property name="upper">8</property>
+                                    <property name="value">1</property>
+                                    <property name="lower">1</property>
+                                    <property name="step-increment">1</property>
+                                    <property name="page-increment">10</property>
+                                  </object>
+                                </property>
+                              </object>
+                            </child>
+                            <child type="suffix">
+                              <object class="GtkLabel">
+                                <property name="label">CPU</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="add_account_button">
+                        <property name="label" translatable="true">Add</property>
+                        <property name="halign">center</property>
+                        <style>
+                          <class name="pill"/>
+                          <class name="suggested-action"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

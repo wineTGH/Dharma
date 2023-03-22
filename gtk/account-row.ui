@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+  <requires lib="gtk" version="4.2" />
+  <requires lib="libadwaita" version="1.0" />
+
+  <template class="DharmaAccountRow" parent="AdwActionRow">
+    <property name="title">Account username</property>
+    <child type="suffix">
+      <object class="GtkButton" id="delete_button">
+        <style>
+          <class name="flat" />
+        </style>
+        <property name="valign">center</property>
+        <property name="halign">center</property>
+        <child>
+          <object class="AdwButtonContent">
+            <property name="icon-name">window-close-symbolic</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
