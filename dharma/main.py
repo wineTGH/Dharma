@@ -41,7 +41,7 @@ class Dharma:
             
             except SameFileError:
                 pass
-            subprocess.run(["genisoimage", "-o", f"{mount_dir}/{account.username}.iso", mount_dir])
+            subprocess.run(["mkisofs", "-o", f"{mount_dir}/{account.username}.iso", "-graft-points", "-rational-rock", "-full-iso9660-filenames", "-iso-level", "2", mount_dir])
             
             try:
                 if not os.path.exists(image_path):
