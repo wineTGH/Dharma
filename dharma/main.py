@@ -1,4 +1,5 @@
 import os
+import subprocess
 from shutil import copy, SameFileError
 
 from dharma.virtual import VirtualMachineManager
@@ -37,8 +38,10 @@ class Dharma:
 
             try:
                 copy(account.secret_file, f"{mount_dir}/{account.username}.json")
+            
             except SameFileError:
                 pass
+            subprocess.run(["genisoimage", "-o", f"{mount_dir}/{account.username}.iso", mount_dir])
             
             try:
                 if not os.path.exists(image_path):
@@ -48,8 +51,7 @@ class Dharma:
 
             template_variables = {
                 "{%guest_name%}": account.username,
-                "{%account_data%}": mount_dir,
-                "{%host_game%}": game_folder_path,
+                "{%account_data%}": f"{mount_dir}/{account.username}.iso",
                 "{%qcow_path%}": image_path,
             }
 
