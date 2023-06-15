@@ -1,13 +1,10 @@
-#!/bin/python
-
-import sys
 import gi
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gio, Adw
-from window import DharmaWindow
+from .window import DharmaWindow
 
 
 class DharmaApplication(Adw.Application):
@@ -55,13 +52,3 @@ class DharmaApplication(Adw.Application):
         self.add_action(action)
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
-
-
-def main(version):
-    """The application's entry point."""
-    app = DharmaApplication()
-    return app.run(sys.argv)
-
-
-if __name__ == "__main__":
-    sys.exit(main('0.0.1'))

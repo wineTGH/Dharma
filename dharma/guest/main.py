@@ -2,7 +2,7 @@ import os
 import subprocess
 from shutil import copy, SameFileError
 
-from guest.virtual import VirtualMachineManager
+from .virtual import VirtualMachineManager
 
 
 class Dharma:

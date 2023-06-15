@@ -2,9 +2,9 @@ from gi.repository import Adw
 from gi.repository import Gtk
 
 
-from singleton import singleton
-from guest.virtual import VirtualMachineManager
-from machine_row import DharmaMachineRow
+from .singleton import singleton
+from .guest.virtual import VirtualMachineManager
+from .machine_row import DharmaMachineRow
 
 @singleton
 @Gtk.Template.from_file('gtk/machine-list-window.ui')

@@ -1,9 +1,9 @@
 from gi.repository import Adw
 from gi.repository import Gtk
 
-from account_row import DharmaAccountRow
-from add_account_dialog import DharmaAddAccountDialog
-from guest.account import DharmaAccount
+from .account_row import DharmaAccountRow
+from .add_account_dialog import DharmaAddAccountDialog
+from .guest.account import DharmaAccount
 
 class DharmaAccountsList():
 
