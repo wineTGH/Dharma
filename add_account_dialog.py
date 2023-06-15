@@ -1,7 +1,7 @@
 from gi.repository import Adw
 from gi.repository import Gtk
 
-from dharma.account import DharmaAccount
+from guest.account import DharmaAccount
 
 @Gtk.Template.from_file('gtk/add-account-dialog.ui')
 class DharmaAddAccountDialog (Adw.Window):

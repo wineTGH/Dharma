@@ -3,7 +3,7 @@ from gi.repository import Gtk
 
 
 from singleton import singleton
-from dharma.virtual import VirtualMachineManager
+from guest.virtual import VirtualMachineManager
 from machine_row import DharmaMachineRow
 
 @singleton

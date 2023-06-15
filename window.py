@@ -6,7 +6,7 @@ from gi.repository import Gtk
 from accounts_list import DharmaAccountsList
 from filepath_settings import DharmaFilePathSettings
 from machines_window import DharmaMachinesWindow
-from dharma.main import Dharma
+from guest.main import Dharma
 
 
 @Gtk.Template.from_file("gtk/window.ui")

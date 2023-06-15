@@ -3,7 +3,7 @@ from gi.repository import Gtk
 
 from account_row import DharmaAccountRow
 from add_account_dialog import DharmaAddAccountDialog
-from dharma.account import DharmaAccount
+from guest.account import DharmaAccount
 
 class DharmaAccountsList():
 
