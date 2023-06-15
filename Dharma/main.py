@@ -1,4 +1,5 @@
 import gi
+import sys
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
@@ -52,3 +53,8 @@ class DharmaApplication(Adw.Application):
         self.add_action(action)
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
+
+def main():
+    """The application's entry point."""
+    app = DharmaApplication()
+    sys.exit(app.run(sys.argv))
