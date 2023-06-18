@@ -51,7 +51,7 @@ function install_dharma_dependencies {
 	}
      
 	which apt-get >> /dev/null && {
-		apt-get install libgirepository1.0-dev libcairo2-dev pkg-config python3-dev gir1.2-gtk-4.0 libvirt-dev python3-pip -y
+		apt-get install libgirepository1.0-dev libcairo2-dev python3-cairo-dev pkg-config python3-dev gir1.2-gtk-4.0 libvirt-dev python3-pip -y
 		return; 
 	}
 }
