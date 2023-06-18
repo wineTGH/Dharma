@@ -3,11 +3,11 @@ import subprocess
 from shutil import copy, SameFileError
 
 from .virtual import VirtualMachineManager
-
+from .account import DharmaAccount
 
 class Dharma:
     manager: VirtualMachineManager
-    accounts: list
+    accounts: list[DharmaAccount]
 
     accounts_data_dir = "~/.dharma_tmp/accounts/"
     images_data_dir = "~/.dharma_tmp/images/"
@@ -28,6 +28,7 @@ class Dharma:
             mount_dir = f"{self.accounts_data_dir}{account.username}"
             image_path = f"{self.images_data_dir}{account.username}.qcow2"
 
+            
             try:
                 os.mkdir(mount_dir)
             except FileExistsError:

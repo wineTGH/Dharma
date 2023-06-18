@@ -3,7 +3,7 @@ from gi.repository import Gtk
 from libvirt import virDomain
 
 
-@Gtk.Template.from_file("gtk/machine-row.ui")
+@Gtk.Template.from_file("Dharma/gtk/machine-row.ui")
 class DharmaMachineRow(Adw.ActionRow):
     __gtype_name__ = "DharmaMachineRow"
     

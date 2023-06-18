@@ -3,7 +3,7 @@ from gi.repository import Gtk
 
 from .guest.account import DharmaAccount
 
-@Gtk.Template.from_file('gtk/account-row.ui')
+@Gtk.Template.from_file('Dharma/gtk/account-row.ui')
 class DharmaAccountRow (Adw.ActionRow):
     __gtype_name__ = 'DharmaAccountRow'
 

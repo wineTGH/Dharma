@@ -3,7 +3,7 @@ from gi.repository import Gtk
 
 from .guest.account import DharmaAccount
 
-@Gtk.Template.from_file('gtk/add-account-dialog.ui')
+@Gtk.Template.from_file('Dharma/gtk/add-account-dialog.ui')
 class DharmaAddAccountDialog (Adw.Window):
     __gtype_name__ = 'DharmaAddAccountDialog'
     
