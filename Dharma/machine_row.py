@@ -1,9 +1,9 @@
 from gi.repository import Adw
 from gi.repository import Gtk
 from libvirt import virDomain
+from os.path import dirname
 
-
-@Gtk.Template.from_file("Dharma/gtk/machine-row.ui")
+@Gtk.Template.from_file(dirname(__file__) + "/gtk/machine-row.ui")
 class DharmaMachineRow(Adw.ActionRow):
     __gtype_name__ = "DharmaMachineRow"
     

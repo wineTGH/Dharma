@@ -1,3 +1,5 @@
+from os.path import dirname
+
 from gi.repository import Adw
 from gi.repository import Gtk
 
@@ -7,7 +9,7 @@ from .guest.virtual import VirtualMachineManager
 from .machine_row import DharmaMachineRow
 
 @singleton
-@Gtk.Template.from_file('Dharma/gtk/machine-list-window.ui')
+@Gtk.Template.from_file(dirname(__file__) + '/gtk/machine-list-window.ui')
 class DharmaMachinesWindow(Adw.Window):
     __gtype_name__ = "DharmaMachinesWindow"
 

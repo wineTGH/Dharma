@@ -1,4 +1,5 @@
 import os
+from os.path import dirname
 
 from gi.repository import Adw
 from gi.repository import Gtk
@@ -9,7 +10,7 @@ from .machines_window import DharmaMachinesWindow
 from .guest.main import Dharma
 
 
-@Gtk.Template.from_file("gtk/window.ui")
+@Gtk.Template.from_file(dirname(__file__) + "/gtk/window.ui")
 class DharmaWindow(Adw.ApplicationWindow):
     __gtype_name__ = "DharmaWindow"
 
