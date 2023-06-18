@@ -23,6 +23,8 @@ class VirtualMachineManager:
             '{%account_data%}': '/tmp',
             '{%host_game%}': '/tmp',
             '{%qcow_path%}': '/images/test.qcow2',
+            '{%uuid%}': '1234-1212323-121223221-1212',
+            '{%looking-glass%}' '/dev/shm/test'
         }
         ```
 

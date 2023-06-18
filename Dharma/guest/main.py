@@ -9,8 +9,8 @@ class Dharma:
     manager: VirtualMachineManager
     accounts: list
 
-    accounts_data_dir = "/home/winet/.dharma_tmp/accounts/"
-    images_data_dir = "/home/winet/.dharma_tmp/images/"
+    accounts_data_dir = "~/.dharma_tmp/accounts/"
+    images_data_dir = "~/.dharma_tmp/images/"
 
     def __init__(
         self, accounts: list, qcow_base_image_path: str, game_folder_path: str

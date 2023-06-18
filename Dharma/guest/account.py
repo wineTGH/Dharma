@@ -3,6 +3,10 @@ class DharmaAccount:
     password = None
     secret_file = None
 
+    vgpu_uuid = None
+    machine_display_file = None
+    
+
     # TODO: Implement this
     machine_ram = None
     machine_vcpu = None
