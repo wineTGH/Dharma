@@ -46,12 +46,12 @@ function install_looking_glass {
 
 function install_dharma_dependencies {
 	which dnf >> /dev/null && {
-		dnf install gobject-introspection-devel cairo-gobject-devel pkg-config python3-devel gtk4 -y
+		dnf install gobject-introspection-devel cairo-gobject-devel pkg-config python3-devel gtk4 python3-pip -y
 		return;
 	}
      
 	which apt-get >> /dev/null && {
-		apt-get install libgirepository1.0-dev libcairo2-dev pkg-config python3-dev gir1.2-gtk-4.0 -y
+		apt-get install libgirepository1.0-dev libcairo2-dev pkg-config python3-dev gir1.2-gtk-4.0 libvirt-dev python3-pip -y
 		return; 
 	}
 }
@@ -86,9 +86,6 @@ function add_modules {
 		update-initramfs -u
 		return; 
 	}
-
-	sudo systemctl enable libvirtd
-	sudo systemctl start libvirtd
 }
 
 ! which looking-glass-client >> /dev/null && install_looking_glass
